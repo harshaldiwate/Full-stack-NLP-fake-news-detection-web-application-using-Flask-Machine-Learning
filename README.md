@@ -1,0 +1,153 @@
+# Fake News Detection — Athenura
+
+An AI-powered web application that detects whether a news article is **real or fake** using Machine Learning.
+
+---
+
+## 🚀 Live Demo
+Run locally using the steps below.
+
+---
+
+## 📌 About the Project
+
+This project was built to combat the growing problem of misinformation. It uses a **Support Vector Machine (SVM)** trained on thousands of real and fake news articles, with **Word2Vec** for text embeddings.
+
+The web interface is built with **HTML, CSS and JavaScript**, served through a **Flask** backend that connects directly to the trained ML models.
+
+---
+
+## 🧠 How It Works
+
+1. User pastes a news **title** and **article text** into the detection form
+2. JavaScript sends the input to the Flask backend via `fetch()`
+3. Flask **cleans the text** — removes URLs, special characters, lowercases
+4. Text is converted into a **Word2Vec vector** (average of all word vectors)
+5. The **SVM model** classifies it as REAL or FAKE
+6. Result is sent back and the page turns **green (REAL)** or **red (FAKE)**
+
+---
+
+## 🏗️ Project Structure
+```
+fake-news-classifier-nlp/
+│
+├── data/
+│   └── news.csv
+│
+├── models/
+│   └── fake_news_model.pkl
+│
+├── screenshots/
+│   ├── homepage.png
+│   ├── prediction_result.png
+│   ├── confusion_matrix.png
+│   └── accuracy_graph.png
+│
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── templates/
+│   ├── index.html
+│   └── result.html
+│
+├── app.py
+├── notebook.ipynb
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .gitattributes
+
+---
+
+## 📊 Model Performance
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | 97.22% |
+| Precision | 0.97 |
+| Recall | 0.97 |
+| F1 Score | 0.97 |
+
+---
+
+## 🗂️ Dataset
+
+Dataset not included in this repo due to file size.
+
+Download from Kaggle:
+👉 https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
+
+Place `Fake.csv` and `True.csv` inside the `dataset/` folder.
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/meetc15/fake-news-detection.git
+cd fake-news-detection
+```
+
+### 2. Create and activate virtual environment
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Mac/Linux
+python -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Train the model (optional — only if pkl files are missing)
+Open and run `notebook.ipynb` top to bottom.
+This will generate `svm_model.pkl` and `w2v_model.pkl` in the `models/` folder.
+
+### 5. Run the Flask app
+```bash
+python app.py
+```
+
+### 6. Open in browser
+```
+http://localhost:xxxx
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Python, Flask |
+| ML Model | SVM (scikit-learn) |
+| Text Embedding | Word2Vec (Gensim) |
+| Data Processing | Pandas, NumPy |
+
+---
+
+## 📁 Requirements
+```
+pandas
+numpy
+scikit-learn
+gensim
+seaborn
+matplotlib
+flask
+flask-cors
+```
+updated by Harshal
+
+---
+updated by Saloni 
